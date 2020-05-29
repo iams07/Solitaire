@@ -407,11 +407,12 @@ def main_menu(deck,show,all,cover,temp,rem,undo):
                 y = int((y-200)/30)
                 l = len(all[x])
                 #print(y,l,cover[x])
-                if y < 0 and x >= 3:
+                if y < 0 and x >= 3 and len(all[x+4]) !=0:
                     temp = []
                     x = x+4
                     temp.append(all[x][len(all[x])-1])
                     rem = x
+                    continue
                 if y >= cover[x] and y <= l+3:
                     if y >= len(all[x]):
                         y = len(all[x])-1
