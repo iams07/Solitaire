@@ -1,4 +1,5 @@
 # Solitaire
+Created a solitaire game for laptop using pygame, and containing almost every functionality of the pre-installed solitaire game.
 ## Rules:
 - Cards can be moved to other slots only when they are of different colors, eg red and black.
 - A card can be moved beneath another card only if its value is 1 less than the other card.
