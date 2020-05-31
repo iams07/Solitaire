@@ -256,6 +256,7 @@ def main_menu(deck,show,all,cover,temp,rem,undo):
             if cover[i] <=0:
                 cover[i] = 0
         if len(all[7]) + len(all[8]) + len(all[9]) + len(all[10]) == 52:
+            pygame.time.delay(1000)
             DISPLAYSURF.fill(blue)
             pygame.draw.rect(DISPLAYSURF,blue,(650,530,200,40))
             fontObj = pygame.font.Font('freesansbold.ttf', 64)
@@ -440,7 +441,7 @@ def main_menu(deck,show,all,cover,temp,rem,undo):
                     continue
                 if x >= 3 and y > 20 and y < 160:
                     x = x+4
-                    if check_final(temp,all[x]) == 1:
+                    if rem < 7 and rem > 10 and check_final(temp,all[x]) == 1:
                         undo = undo + 1
                         a = 'Save/solitaire' + str(undo)
                         shelf = shelve.open(a)
@@ -479,6 +480,7 @@ def main_menu(deck,show,all,cover,temp,rem,undo):
                             l = len(all[rem])
                             all[rem].pop(l-1)
                         if rem >=7:
+                            refresh(deck,show,all,cover,temp,0)
                             continue
                         if len(all[rem]) == cover[rem]:
                             cover[rem] = cover[rem] - 1
